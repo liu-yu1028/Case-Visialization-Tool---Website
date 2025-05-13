@@ -165,7 +165,7 @@ if(isNaN(sugar) || sugar < 0){
   warnings.push("血糖不可為負值");
   document.getElementById("sugar").classList.add("input-error");
 }else{
-  if(sugar < 90){
+  if(sugar < 60){
     warnings.push("低血糖，可能有頭暈、顫抖、昏迷、抽搐等問題");
     
   }else if(sugar > 139){
