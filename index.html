@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>病例視覺化工具</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+  <h1>病例視覺化工具</h1>
+  </header>
+
+  <main>
+    <section class="data-visualization-container">
+      <section class="left-panel">
+
+     <section class="form-section">
+      <h2 class="form-section">新增病例資料</h2>
+      <form id = "dataform" action="#">
+        名字:<br>
+        <input type="text" id="name" name="name" required>
+        <br>
+        年齡:<br>
+        <input type="text" id="age" name="age" required>
+        <br>
+        性別:<br>
+        <select name="gender" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select><br>
+        <label for="pressure">血壓(mmHg):</label><br>
+        <input type="text" id="pressure" placeholder="例如120/80">
+        <br>
+        心率(bpm):<br>
+        <input type="number" id="rate" value="">
+        <br>
+        血糖(mg/dl):<br>
+        <input type="number" id="sugar" value="">
+        <br>
+         體溫(°C):<br>
+        <input type="number" id="temperature" step="0.1" value="">
+        <br><br>
+          <input type="submit" value="送出">
+      </form>
+    </section>
+
+    <section class="select-section">
+      <h2 id="select-section">切換使用者</h2>
+      <label for="patientSelect">選擇使用者：</label>
+      <select id="patientSelect">
+        <option value="">--請選擇--</option>
+      </select>
+      <h3 id="currentPatient">目前使用者：尚未選擇</h3>
+    </section>
+  </section>
+
+    <section class="chart-section">
+      <h2 id="chart-section">視覺化圖表</h2>
+      <canvas id="myChart"></canvas>
+    </section>
+  </section>
+
+  <div class="health-info-sections">
+
+<section class="static-section">
+  <h2 id="static-section">正常生理指標區間</h2>
+  <table>
+    <tr>
+      <th>生理指標</th>
+      <th>正常指標</th>
+      <th>備註</th>
+    </tr>
+    <tr>
+      <th>血壓</th>
+      <td>收縮壓 90~120 mmHg
+        <br>
+        舒張壓 60~80 mmHg
+      </td>
+      <td>正常範圍約 90/60 mmHg~120/80 mmHg</td>
+    </tr>
+    <tr>
+      <th>心率</th>
+      <td>60~100 bpm</td>
+      <td>運動員可能介於 40~60 bpm</td>
+    </tr>
+    <tr>
+      <th>空腹血糖值
+        <br>
+        飯後血糖值
+      </th>
+      <td>60~99 mg/dl
+        <br>
+        60~139 mg/dl
+      </td>
+      <td> > 126 mg/dl為糖尿病診斷標準
+        <br>
+        > 200 mg/dl為糖尿病診斷標準
+      </td>
+    </tr>
+    <tr>
+      <th>體溫（腋下）</th>
+      <td>正常值約 34.7 ℃~37.3 ℃</td>
+      <td> ≥ 37.5 ℃可能為發燒</td>
+    </tr>
+  </table>
+</section>
+
+<section id="warnMessages-section">
+  <h2>⚠️健康風險提示</h2>
+  <ul id="warnings"></ul>
+</section>
+
+  </div>
+  </main>
+
+    <footer>
+      <p>© 2025 病例視覺化工具 | 開發者：劉芷伃</p>
+      <p>版本1.0 | 聯絡信箱：ch663654@gmail.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
